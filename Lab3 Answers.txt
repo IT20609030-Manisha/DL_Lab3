@@ -1,0 +1,36 @@
+Quesion 1
+
+1.Based on the result, explain how 1D convolution can be used to identify the 
+edges in an image.
+
+• In 1D convolution, a small set of learnable filters are applied to a one-dimensional input sequence to produce a set of output features. 
+  The filters are typically small and are moved over the input sequence, one element at a time.
+• Slide the filter over the input image.
+• At each position element-wise multiplication is performed between the values of the filter and the underlying 
+  image pixels that the filter is currently overlapping, and results are summed to produce a single output value for that position.
+• This process is repeated for every position in the image.
+
+
+Question 3
+
+1.Why does the validation error increase when the number of epochs are increased? 
+Explain how you can modify the training process to stop that from happening.
+
+• This scenario is known as overfitting. Overfitting is a model performs well on the training data, but poorly on the test data or unseen data. This means that the model has memorized the specific patterns and noise in the training data, but it cannot adapt to new situations or variations.
+• How to prevent:
+	Ealy stopping – Monitor both the training and validation errors during training. If the validation error starts to increase while the training error keeps decreasing, it’s a sign that the model is overfitting. At that point stop the training.
+
+	Regularization – Apply regularization techniques such as L1 or L2
+
+	Dropout – randomly remove links and train the model.
+
+	Hyperparameter tuning.
+
+2.Explain how the mini batch SGD (Stochastic Gradient Descent) algorithm can converge faster than the batch Gradient Descent algorithm.
+
+• Batch gradient descent takes longer to converge since it computes the gradient 
+  using the entire training dataset in each iteration. 
+• Stochastic gradient descent, on the other hand, can converge faster since it divided training 
+ dataset into smaller subsets (mini batches). In each iteration a mini-batch is randomly sampled from dataset, 
+ and computes the gradient based on that mini-batch. The model parameters are updated after each mini-batch, 
+ and this process is repeated for a certain number of epochs. This can lead to faster convergence.
